@@ -39,3 +39,8 @@ module.exports  = {
 ```
 
 ### Install uuid to manage unique identifiers
+```sh
+npm install uuid
+```
+
+### You are ready to go! 🚀
