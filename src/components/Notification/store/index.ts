@@ -1,4 +1,4 @@
-import type { NotificationData, NotificationsState } from '../interfaces';
+import type { NotificationsState, NotificationConfig } from '../interfaces';
 import { reactive, readonly } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -10,13 +10,27 @@ const actions = {
   removeNotification(id: string) {
     state.notifications = state.notifications.filter(notification => notification.id !== id);
   },
-  dispatchNotification() {
+  dispatchNotification({
+    title,
+    content,
+    type,
+    autoClose = true,
+    duration = 3000,
+  }: NotificationConfig) {
     const id = uuidv4();
-    const notifications = [{ id }, ...state.notifications];
+    const notifications = [{
+      id,
+      title,
+      content,
+      type,
+    }, ...state.notifications];
     state.notifications = notifications;
-    setTimeout(() => {
-      actions.removeNotification(id);
-    }, 3000);
+
+    if (autoClose) {
+      setTimeout(() => {
+        actions.removeNotification(id);
+      }, duration);
+    }
   }
 }
 

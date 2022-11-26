@@ -1,5 +1,5 @@
-import type { NotificationData } from './NotificationData.interface';
+import type { Notification } from './Notification.interface';
 
 export interface NotificationsState {
-  notifications: NotificationData[];
+  notifications: Notification[];
 }

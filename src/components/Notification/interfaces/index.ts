@@ -1,4 +1,5 @@
-import type { NotificationData } from './NotificationData.interface'
+import type { Notification, NotificationType } from './Notification.interface'
 import type { NotificationsState } from './NotificationsState.interface'
+import type { NotificationConfig } from './NotificationConfig.interface'
 
-export { NotificationData, NotificationsState};
+export { Notification, NotificationsState, NotificationConfig, NotificationType};

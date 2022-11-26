@@ -18,8 +18,8 @@
         move-class="transition ease-in-out duration-500"
       >
         <Notification
-          :id="notification.id"
           :key="notification.id"
+          :notification="notification"
           :class="idx > 0 ? 'mt-4' : ''"
           v-for="(notification, idx) in store.getters.getNotifications()"
         />

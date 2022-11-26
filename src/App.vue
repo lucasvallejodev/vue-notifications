@@ -3,7 +3,7 @@ import { NotificationProvider, dispatchNotification } from './components/Notific
 import Button from './components/Button.vue';
 
 const addNotification = () => {
-  dispatchNotification();
+  dispatchNotification({ title: 'Success!', content: 'Your action was successfully submitted', type: 'success' });
 }
 </script>
 
