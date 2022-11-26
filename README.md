@@ -1,40 +1,41 @@
-# Notifications
+# Vue.js Simple Notifications
 
-This template should help get you started developing with Vue 3 in Vite.
+![Vue.js Simple Notifications](https://raw.githubusercontent.com/lucasvallejo1992/vue-notifications/2452d98c2661c7b9a4189b73e62046dbd4dcd22d/docs/simple-notification.png)
 
-## Recommended IDE Setup
+🎉 Vue.js Simple Notifications allows you to add extra simple notifications to your app with ease.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Installation
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
+### Project Setup
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
-
+### Compile and test it
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+If you want to use the component you'll need to use vue 3 and install the following libraries:
 
+### First you need to install tailwind and set it up
 ```sh
-npm run build
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
 ```
+
+### Configure your tailwind template paths
+```
+/**  @type  {import('tailwindcss').Config}  */
+module.exports  = {
+  content: [
+    "./src/**/*.{js,ts,vue}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+### Install uuid to manage unique identifiers
