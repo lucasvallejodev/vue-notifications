@@ -1,7 +1,13 @@
 <script setup lang="ts">
+  import store from './store';
+
   defineProps<{
     id: string
   }>();
+
+  const closeNotification = (id: string) => {
+    store.actions.removeNotification(id);
+  }
 </script>
 
 <template>
@@ -24,7 +30,7 @@
           </div>
           <div class="ml-4 flex-shrink-0 flex">
             <button
-              @click="$emit('remove', id)"
+              @click="() => closeNotification(id)"
               class="inline-flex text-gray-400 focus:outline-none focus:text-gray-500 transition-all ease-in-out duration-150"
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" class="w-5 h-5">
