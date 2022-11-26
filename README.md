@@ -16,7 +16,7 @@ npm install
 npm run dev
 ```
 
-### If you want to use the component you'll need to use vue 3 and install the following libraries:
+If you want to use the component on your own project you'll need to use vue 3 and install the following libraries:
 
 ### First you need to install tailwind and set it up
 ```sh
